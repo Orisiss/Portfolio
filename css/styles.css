@@ -4,14 +4,64 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: #161513;
     color: #c5c5c5;
+    animation: scrollAnimation 2s ease-in-out !important;
 }
 
 a {
     text-decoration: none;
+}
+
+.navbar a {
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+.navbar a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navbar div {
+    padding: 10px;
 }
 
 header {
@@ -112,12 +162,8 @@ nav {
     height: 64px;
     border-radius: 50px;
     border: 1px solid var(--Primary-Color, #fff);
-    background: linear-gradient(
-        0deg,
-        var(--Primary-Color, #fff) 0%,
-        var(--Primary-Color, #fff) 100%
-      ),
-      var(--Primary-Color, #fff);
+    background: var(--Primary-Color, #fff);
+    color: #161513;
     font-size: 22px;
     margin-right: 20px;
 }
@@ -130,6 +176,21 @@ nav {
     border-radius: 50px;
     font-size: 22px;
     color: #fff;
+}
+
+.btn-primary, .btn-secondary {
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #161513;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: #161513;
 }
 
 .experience-with {
@@ -258,4 +319,41 @@ footer p {
 
 .social-links img {
     margin-right: 20px;
+}
+
+.button-top {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    transition: box-shadow 0.3s ease;
+}
+
+.button-top:hover {
+    box-shadow: 0px 0px 10px 4px rgba(180, 160, 255, 0.5);
+}
+
+.svgIcon {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.svgIcon path {
+    fill: white;
 }
