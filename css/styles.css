@@ -47,8 +47,30 @@ nav {
     padding: 80px 20px;
 }
 
+.avatar-container {
+  position: relative;
+  width: 251px;
+  height: 251px;
+  margin: 0 auto;
+}
+
+.avatar-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(116deg, #ff8660 0%, #9a33ff 100%);
+  z-index: -1;
+}
+
 .avatar img {
-    width: 251px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .about {
@@ -58,13 +80,15 @@ nav {
 .about-text {
     width: 652px;
     margin: 30px auto;
-  }
-  .about-text h1 {
+}
+
+.about-text h1 {
     font-size: 55px;
     line-height: 1;
     color: #fff;
-  }
-  .about-text h1 > span {
+}
+
+.about-text h1 > span {
     background: var(
       --Primary-Gradient,
       linear-gradient(116deg, #ff8660 71.79%, #9a33ff 95.51%)
@@ -72,15 +96,18 @@ nav {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  .about-text p {
+}
+
+.about-text p {
     font-size: 18px;
     margin-top: 30px;
-  }
-  .about-btn {
+}
+
+.about-btn {
     margin-top: 30px;
-  }
-  .btn-primary {
+}
+
+.btn-primary {
     width: 195px;
     height: 64px;
     border-radius: 50px;
@@ -93,8 +120,9 @@ nav {
       var(--Primary-Color, #fff);
     font-size: 22px;
     margin-right: 20px;
-  }
-  .btn-secondary {
+}
+
+.btn-secondary {
     width: 195px;
     height: 64px;
     background: none;
@@ -102,29 +130,34 @@ nav {
     border-radius: 50px;
     font-size: 22px;
     color: #fff;
-  }
-  .experience-with {
+}
+
+.experience-with {
     text-align: center;
-  }
+}
   
-  .experience-with h2 {
+.experience-with h2 {
     font-size: 20px;
-  }
-  .experience-with-lang {
+}
+
+.experience-with-lang {
     display: flex;
     width: 500px;
     margin: 50px auto;
     justify-content: space-between;
-  }
-  .experience-with-lang img {
+}
+
+.experience-with-lang img {
     width: 42px;
     cursor: pointer;
-  }
-  .primary-heading {
+}
+
+.primary-heading {
     text-align: center;
     font-size: 35px;
-  }
-  .heading-project {
+}
+
+.heading-project {
     background: var(
       --Orange-Gradient,
       linear-gradient(180deg, #ff8660 0%, #d5491d 100%)
@@ -132,29 +165,34 @@ nav {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  .projects {
+}
+
+.projects {
     display: flex;
     justify-content: space-between;
     margin: 40px 0;
-  }
-  .project-item {
+}
+
+.project-item {
     background: #2a2a2a;
     margin: 20px;
     border-radius: 18px 18px 0 0;
-  }
-  .project-item img {
+}
+
+.project-item img {
     width: 100%;
     border-radius: 18px 18px 0 0;
-  }
-  .project-title {
+}
+
+.project-title {
     padding: 15px;
-  }
-  .project-title h3 {
+}
+
+.project-title h3 {
     color: #fff;
-  }
+}
   
-  .heading-experience {
+.heading-experience {
     background: var(
       --Blue-Gradient,
       linear-gradient(180deg, #5badff 0%, #1373d1 100%)
@@ -162,49 +200,59 @@ nav {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-  .experience-item {
+}
+
+.experience-item {
     padding: 30px 0;
-  }
-  .experience-title-container {
+}
+
+.experience-title-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-  }
-  .experience-title-container .date {
+}
+
+.experience-title-container .date {
     margin-left: auto;
-  }
-  .experience-title {
+}
+
+.experience-title {
     color: #fff;
     font-size: 22px;
     font-weight: bold;
     margin-left: 10px;
-  }
-  footer {
+}
+
+footer {
     background-color: #191919;
-  }
-  footer h2 {
+}
+
+footer h2 {
     color: #fff;
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  footer p {
+}
+
+footer p {
     font-size: 15px;
-  }
-  .email-container {
+}
+
+.email-container {
     display: flex;
     align-items: center;
     margin-top: 40px;
-  }
-  .email-container img {
+}
+
+.email-container img {
     margin-right: 10px;
-  }
+}
   
-  .social-links {
+.social-links {
     display: flex;
     margin-top: 40px;
-  }
-  .social-links img {
+}
+
+.social-links img {
     margin-right: 20px;
-  }
+}
