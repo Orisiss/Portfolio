@@ -19,10 +19,13 @@
                         <a href="#accueil">Home</a>
                     </div>
                     <div>
+                        <a href="#experience-with">Experience with</a>
+                    </div>
+                    <div>
                         <a href="#projects">Projects</a>
                     </div>
                     <div>
-                        <a href="#experience">Experience</a>
+                        <a href="#experience-with">Experience</a>
                     </div>
                     <div>
                         <a href="#contact">Contact</a>
@@ -54,7 +57,7 @@
                 </div>
             </div>
         </section>
-        <section id="experience" class="container experience-with">
+        <section id="experience-with" class="container experience-with">
             <h2>EXPERIENCE WITH</h2>
             <div class="experience-with-lang">
                 <div><img src="assets/html.png" alt="html logo" /></div>
@@ -115,20 +118,34 @@
                 <!-- Ajouted d'autres réseaux sociauex si nécéssaires ici -->
             </div>
         </footer>
-         <button id="back-to-top">Top</button>
+        <button class="button-top" id="back-to-top">
+            <svg class="svgIcon" viewBox="0 0 384 512">
+                <path
+                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5
+                    12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0
+                    17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5
+                    12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                ></path>
+            </svg>
+        </button>
     </body>
 </html>
 
 <script>
-    let setTimeoutId = null;
-    window.addEventListener('scroll', event => {
-    //clear a previously pending timeout
-    clearTimeout(setTimeoutId);
-    //create a new timeout that will be launched in 400ms
-    setTimeoutId = setTimeout(()=>onScroll(event), 100);
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        let backToTopButton = document.getElementById('back-to-top');
 
-function onScroll(event){
-    console.log("On scroll called");
-}
+        window.addEventListener('scroll', function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    });
 </script>
