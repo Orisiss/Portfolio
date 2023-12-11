@@ -4,11 +4,12 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width", initial-scale="1.0"/>
         <link rel="stylesheet" href="/css/styles.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"/>
         <title>Louis Pichon</title>
     </head>
-    <body>
+    <body class="animate__animated animate__fadeIn animate__slower">
         <header>
             <nav>
                 <div class="logo">
@@ -98,7 +99,7 @@
                     <p>As a C# .NET developer, I craft customized web applications to 
                         streamline supply chain processes and simplify machinery 
                         usage in workshops. My goal is to enhance operational 
-                        efficiency and productivity.</p>
+                        efficiency and productivity</p>
                 </div>
                 <!-- Ajouter d'autre "experience-item" si d'autres experience à ajouter -->
             </div>
@@ -106,7 +107,10 @@
         <footer id="contact">
             <div class="container">
                 <h2>Contact</h2>
-                <p>Raconter encore du charabia...</p>
+                <p>Experienced Full Stack Developer with 2 years of hands-on experience in designing and developing
+                    web solutions. Adept at leveraging a comprehensive skill set encompassing front-end and back-end
+                    technologies
+                </p>
                 <div class="email-container">
                     <div><img src="/assets/email-icon.svg" alt="email"/></div>
                     <div>louisp_chn@icloud.com</div>
@@ -148,4 +152,8 @@
             document.documentElement.scrollTop = 0;
         });
     });
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    }
+    history.replaceState({}, document.title, window.location.pathname);
 </script>

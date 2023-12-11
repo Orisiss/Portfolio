@@ -25,7 +25,6 @@ body {
     font-family: "Poppins", sans-serif;
     background-color: #161513;
     color: #c5c5c5;
-    animation: scrollAnimation 2s ease-in-out !important;
 }
 
 a {
