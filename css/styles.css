@@ -96,6 +96,12 @@ nav {
     padding: 80px 20px;
 }
 
+.container-contact {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
 .avatar-container {
   position: relative;
   width: 251px;
@@ -175,6 +181,7 @@ nav {
     border-radius: 50px;
     font-size: 22px;
     color: #fff;
+    margin-left: 50px;
 }
 
 .btn-primary, .btn-secondary {
@@ -355,4 +362,54 @@ footer p {
 
 .svgIcon path {
     fill: white;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    nav {
+        background-color: #222;
+    }
+
+    .projects {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 40px 0;
+    }
+
+    footer {
+        background-color: #222;
+    }
+
+    .container-contact {
+        background-color: #222;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav {
+        background-color: #222;
+    }
+
+    .projects {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin: 40px 0;
+    }
+
+    footer {
+        background-color: #222;
+    }
+
+    .container-contact {
+        background-color: #222;
+    }
 }
