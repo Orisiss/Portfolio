@@ -315,7 +315,7 @@
   });
   window.addEventListener("mousemove", e => {
     mouseMoved = true;
-    updateMousePosition(e.pageX, e.pageY);
+    updateMousePosition(e.clientX, e.clientY);
   });
   window.addEventListener("touchmove", e => {
     mouseMoved = true;

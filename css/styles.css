@@ -556,6 +556,10 @@ canvas {
         margin: 0 auto;
         background-color: #222;
     }
+
+    canvas {
+        display: none;    
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -610,5 +614,9 @@ canvas {
         width: 1100px;
         margin: 0 auto;
         background-color: #222;
+    }
+
+    canvas {
+        display: none;
     }
 }
