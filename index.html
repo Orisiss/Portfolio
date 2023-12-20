@@ -14,7 +14,7 @@
 
 <canvas id="canvas"></canvas>
 
-<body class="animate__animated animate__fadeIn animate__slower">
+<body id="drag-body" class="animate__animated animate__fadeIn animate__slower">
   <header class="header">
     <nav>
       <!--<div class="logo">
@@ -315,7 +315,7 @@
   });
   window.addEventListener("mousemove", e => {
     mouseMoved = true;
-    updateMousePosition(e.pageX, e.pageY);
+    updateMousePosition(e.clientX, e.clientY);
   });
   window.addEventListener("touchmove", e => {
     mouseMoved = true;
