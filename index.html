@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <title>Louis Pichon</title>
 </head>
+
+<canvas id="canvas"></canvas>
 
 <body class="animate__animated animate__fadeIn animate__slower">
   <header class="header">
@@ -249,7 +250,9 @@
                     12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"></path>
     </svg>
   </button>
+  </canvas>
 </body>
+
 
 </html>
 
@@ -278,111 +281,98 @@
   };
   history.replaceState({}, document.title, window.location.pathname);
 
-  var radius = 240;
-  var autoRotate = true;
-  var rotateSpeed = -60;
-  var imgWidth = 120;
-  var imgHeight = 170;
+  // Partie trainée derrière curseur
 
-  setTimeout(init, 1000);
+  const canvas = document.querySelector("canvas");
+  const ctx = canvas.getContext('2d');
 
-  var odrag = document.getElementById("drag-container");
-  var ospin = document.getElementById("spin-container");
-  var aImg = ospin.getElementsByTagName("img");
-  var aVid = ospin.getElementsByTagName("video");
-  var aEle = [...aImg, ...aVid];
+  let mouseMoved = false;
 
-  ospin.style.width = imgWidth + "px";
-  ospin.style.height = imgHeight + "px";
+  const pointer = {
+    x: .5 * window.innerWidth,
+    y: .5 * window.innerHeight,
+  }
+  const params = {
+    pointsNumber: 40,
+    widthFactor: .3,
+    mouseThreshold: .6,
+    spring: .4,
+    friction: .5
+  };
 
-  var ground = document.getElementById("ground");
-  ground.style.width = radius * 3 + "px";
-  ground.style.height = radius * 3 + "px";
-
-  function init(delayTime) {
-    for (var i = 0; i < aEle.length; i++) {
-      aEle[i].style.transform =
-        "rotateY(" +
-        i * (360 / aEle.length) +
-        "deg) translateZ(" +
-        radius +
-        "px)";
-      aEle[i].style.transition = "transform 1s";
-      aEle[i].style.transitionDelay = delayTime || (aEle.length - i) / 4 + "s";
+  const trail = new Array(params.pointsNumber);
+  for (let i = 0; i < params.pointsNumber; i++) {
+    trail[i] = {
+      x: pointer.x,
+      y: pointer.y,
+      dx: 0,
+      dy: 0,
     }
   }
 
-  function applyTranform(obj) {
-    if (tY > 180) tY = 180;
-    if (tY < 0) tY = 0;
+  window.addEventListener("click", e => {
+    updateMousePosition(e.pageX, e.pageY);
+  });
+  window.addEventListener("mousemove", e => {
+    mouseMoved = true;
+    updateMousePosition(e.pageX, e.pageY);
+  });
+  window.addEventListener("touchmove", e => {
+    mouseMoved = true;
+    updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+  });
 
-    obj.style.transform = "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
+  function updateMousePosition(eX, eY) {
+    pointer.x = eX;
+    pointer.y = eY;
   }
 
-  function playSpin(yes) {
-    ospin.style.animationPlayState = yes ? "running" : "paused";
+  setupCanvas();
+  update(0);
+  window.addEventListener("resize", setupCanvas);
+
+
+  function update(t) {
+    if (!mouseMoved) {
+      pointer.x = (.5 + .3 * Math.cos(.002 * t) * (Math.sin(.005 * t))) * window.innerWidth;
+      pointer.y = (.5 + .2 * (Math.cos(.005 * t)) + .1 * Math.cos(.01 * t)) * window.innerHeight;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    var gradient = ctx.createRadialGradient(trail[0].x, trail[0].y, 5, trail[0].x, trail[0].y, 20);
+    gradient.addColorStop(0, 'white');
+
+    ctx.strokeStyle = gradient;
+    trail.forEach((p, pIdx) => {
+      const prev = pIdx === 0 ? pointer : trail[pIdx - 1];
+      const spring = pIdx === 0 ? .4 * params.spring : params.spring;
+      p.dx += (prev.x - p.x) * spring;
+      p.dy += (prev.y - p.y) * spring;
+      p.dx *= params.friction;
+      p.dy *= params.friction;
+      p.x += p.dx;
+      p.y += p.dy;
+    });
+
+    ctx.lineCap = "round";
+    ctx.beginPath();
+    ctx.moveTo(trail[0].x, trail[0].y);
+
+    for (let i = 1; i < trail.length - 1; i++) {
+      const xc = .5 * (trail[i].x + trail[i + 1].x);
+      const yc = .5 * (trail[i].y + trail[i + 1].y);
+      ctx.quadraticCurveTo(trail[i].x, trail[i].y, xc, yc);
+      ctx.lineWidth = params.widthFactor * (params.pointsNumber - i);
+      ctx.stroke();
+    }
+    ctx.lineTo(trail[trail.length - 1].x, trail[trail.length - 1].y);
+    ctx.stroke();
+
+    window.requestAnimationFrame(update);
   }
 
-  var sX,
-    sY,
-    nX,
-    nY,
-    desX = 0,
-    desY = 0,
-    tX = 0,
-    tY = 10;
-
-  if (autoRotate) {
-    var animationName = rotateSpeed > 0 ? "spin" : "spinRevert";
-    ospin.style.animation = `${animationName} ${Math.abs(
-      rotateSpeed
-    )}s infinite linear`;
+  function setupCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-
-  document.onpointerdown = function (e) {
-    clearInterval(odrag.timer);
-    e = e || window.event;
-    var sX = e.clientX,
-      sY = e.clientY;
-
-    this.onpointermove = function (e) {
-      e = e || window.event;
-      var nX = e.clientX,
-        nY = e.clientY;
-      desX = nX - sX;
-      desY = nY - sY;
-      tX += desX * 0.1;
-      tY += desY * 0.1;
-      applyTranform(odrag);
-      sX = nX;
-      sY = nY;
-    };
-
-    this.onpointerup = function (e) {
-      odrag.timer = setInterval(function () {
-        desX *= 0.95;
-        desY *= 0.95;
-        tX += desX * 0.1;
-        tY += desY * 0.1;
-        applyTranform(odrag);
-        playSpin(false);
-        if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
-          clearInterval(odrag.timer);
-          playSpin(true);
-        }
-      }, 17);
-      this.onpointermove = this.onpointerup = null;
-    };
-
-    return false;
-  };
-
-  document.onmousewheel = function (e) {
-    e = e || window.event;
-    var d = e.wheelDelta / 20 || -e.detail;
-    radius += d;
-    init(1);
-  };
-
-  // Partie trainée derrière curseur
 </script>

@@ -33,16 +33,6 @@ a {
     text-decoration: none;
 }
 
-.anime-container {
-    position: relative;
-}
-
-.anime-container .dot {
-    position: absolute;
-    border-radius: 50%;
-    background-color: hsl(60, 100%, 80%);
-}
-
 nav {
     display: flex;
     justify-content: right;
@@ -505,6 +495,12 @@ footer p {
 
 .svgIcon path {
     fill: white;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 @media screen and (max-width: 768px) {
