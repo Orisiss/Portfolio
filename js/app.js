@@ -51,9 +51,6 @@ for (let i = 0; i < params.pointsNumber; i++) {
     };
 }
 
-window.addEventListener("click", (e) => {
-    updateMousePosition(e.pageX, e.pageY);
-});
 window.addEventListener("mousemove", (e) => {
     mouseMoved = true;
     updateMousePosition(e.clientX, e.clientY);
