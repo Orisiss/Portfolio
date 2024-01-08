@@ -15,8 +15,8 @@ Project Description
 
 ### In Progress
 
-- [ ] Fix le hover du bouton Get In Touch au format ordinateur  
 
 ### Done ✓
 
+- [x] Fix le hover du bouton Get In Touch au format ordinateur  
 
