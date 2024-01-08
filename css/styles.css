@@ -346,13 +346,13 @@ header {
 
 .experience-with-lang {
     display: flex;
-    width: 500px;
-    margin: 50px auto;
-    justify-content: space-between;
+    margin-top: 50px;
+    justify-content: center;
 }
 
 .experience-with-lang img {
     width: 42px;
+    margin-right: 5px;
     cursor: pointer;
 }
 
