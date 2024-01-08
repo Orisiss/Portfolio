@@ -274,6 +274,7 @@ header {
     background-color: #161513;
     color: #fff;
     border: 2px solid #fff;
+    box-shadow: 0 0 25px #fec1958c;
 }
 
 .btn-secondary:hover .star-1 {
