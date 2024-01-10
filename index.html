@@ -14,27 +14,37 @@
 <canvas id="canvas"></canvas>
 
 <body class="animate__animated animate__fadeIn animate__slower">
-  <header class="header">
-    <nav>
-      <div class="navbar">
-        <div>
-          <a href="#accueil">Home</a>
-        </div>
-        <div>
-          <a href="#experience-with">Experience with</a>
-        </div>
-        <div>
-          <a href="#projects">Projects</a>
-        </div>
-        <div>
-          <a href="#experience-with">Experience</a>
-        </div>
-        <div>
-          <a href="#contact">Contact</a>
-        </div>
+  <div class="bouncing-blobs-container">
+    <div class="bouncing-blobs-glass"></div>
+    <div class="bouncing-blobs">
+      <div class="bouncing-blob bouncing-blob--blue"></div>
+      <div class="bouncing-blob bouncing-blob--blue"></div>
+      <div class="bouncing-blob bouncing-blob--blue"></div>
+      <div class="bouncing-blob bouncing-blob--white"></div>
+      <div class="bouncing-blob bouncing-blob--purple"></div>
+      <div class="bouncing-blob bouncing-blob--purple"></div>
+      <div class="bouncing-blob bouncing-blob--pink"></div>
+    </div>
+  </div>
+  <nav>
+    <div class="navbar">
+      <div>
+        <a href="#accueil">Home</a>
       </div>
-    </nav>
-  </header>
+      <div>
+        <a href="#experience-with">Experience with</a>
+      </div>
+      <div>
+        <a href="#projects">Projects</a>
+      </div>
+      <div>
+        <a href="#experience-with">Experience</a>
+      </div>
+      <div>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
   <section id="accueil" class="container about">
     <div class="avatar-container">
       <div class="avatar-circle">
@@ -228,26 +238,24 @@
     </div>
   </section>
 
-  <footer id="contact">
-    <div class="container-contact">
-      <h2>Contact</h2>
-      <p>
-        Experienced Full Stack Developer with 2 years of hands-on experience
-        in designing and developing web solutions. Adept at leveraging a
-        comprehensive skill set encompassing front-end and back-end
-        technologies
-      </p>
-      <div class="email-container">
-        <div><img src="/assets/email-icon.svg" alt="email" /></div>
-        <div class="email-text">louisp_chn@icloud.com</div>
-      </div>
+  <div id="contact" class="container-contact">
+    <h2>Contact</h2>
+    <p>
+      Experienced Full Stack Developer with 2 years of hands-on experience
+      in designing and developing web solutions. Adept at leveraging a
+      comprehensive skill set encompassing front-end and back-end
+      technologies
+    </p>
+    <div class="email-container">
+      <div><img src="/assets/email-icon.svg" alt="email" /></div>
+      <div class="email-text">louisp_chn@icloud.com</div>
     </div>
-    <div class="social-links">
-      <div><img src="/assets/linkedin.svg" alt="social" /></div>
-      <div><img src="/assets/github.svg" alt="social" /></div>
-      <!-- Ajouted d'autres réseaux sociauex si nécéssaires ici -->
-    </div>
-  </footer>
+  </div>
+  <div class="social-links">
+    <div><img src="/assets/linkedin.svg" alt="social" /></div>
+    <div><img src="/assets/github.svg" alt="social" /></div>
+    <!-- Ajouted d'autres réseaux sociauex si nécéssaires ici -->
+  </div>
   <button class="button-top" id="back-to-top">
     <svg class="svgIcon" viewBox="0 0 384 512">
       <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5
