@@ -388,7 +388,7 @@ header {
 .project-item {
     background: #2a2a2a;
     margin: 20px;
-    border-radius: 18px 18px 0 0;
+    border-radius: 18px;
 }
 
 .project-item img {
