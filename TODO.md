@@ -14,7 +14,7 @@ Project Description
 
 ### In Progress
 
-- [ ] Ajouter des projets sous forme de carousel 
+- [ ] Ajouter des projets sous forme de modal 
 
 ### Done ✓
 
