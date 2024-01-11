@@ -379,16 +379,31 @@ header {
     -webkit-text-fill-color: transparent;
 }
 
+.carousel {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
 .projects {
-    display: flex;
+    display: block;
     justify-content: space-between;
-    margin: 40px 0;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
 
 .project-item {
+    display: inline-block;
+    width: 420px;
+    height: 330px;
+    position: relative;
     background: #2a2a2a;
     margin: 20px;
     border-radius: 18px;
+}
+
+.project-item div {
+    width: auto;
 }
 
 .project-item a:visited {
@@ -397,13 +412,11 @@ header {
 }
 
 .project-item img {
-    text-decoration: none !important;
     width: 100%;
     border-radius: 18px 18px 0 0;
 }
 
 .project-title {
-    text-decoration: none !important;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -413,7 +426,6 @@ header {
 
 .project-title h3 {
     color: #fff;
-    text-decoration: none !important;
 }
 
 .project-title a {
