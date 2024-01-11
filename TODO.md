@@ -11,11 +11,13 @@ Project Description
 - [ ] Ajouter EE hacker lorsque l'on clique sur l'avatar  
 - [ ] Rendre email clickable pour contact facile  
 - [ ] Rendre bouton réseaux sociaux clickable + animation de hover  
-- [ ] Changer la taille des projets en mode responsive 
+- [ ] Trouver un moyen d'ajouter sa veille technologie
+- [ ] Trouver un moyen d'ajouter les outils que j'utilise
 
 ### In Progress
 
 - [ ] Ajouter des projets sous forme de modal 
+- [ ] Changer la taille des projets en mode responsive 
 
 ### Done ✓
 

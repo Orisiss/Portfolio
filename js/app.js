@@ -178,7 +178,7 @@ class Blob {
   }
 }
 
-window.onload = function initBlobs() {
+function initBlobs() {
   const blobEls = document.querySelectorAll('.bouncing-blob')
   const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
 
