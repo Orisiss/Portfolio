@@ -1,3 +1,5 @@
+import Swiper from "swiper";
+
 document.addEventListener("DOMContentLoaded", function () {
   let backToTopButton = document.getElementById("back-to-top");
 
@@ -210,4 +212,15 @@ const observer = new IntersectionObserver((entries) => {
 const projectItems = document.querySelectorAll(".project-item");
 projectItems.forEach((item) => {
   observer.observe(item);
+});
+
+// Partie navigation dans le carousel pour mobile
+
+const swiper = new Swiper('.projects', {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 });
