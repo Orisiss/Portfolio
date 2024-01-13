@@ -130,11 +130,9 @@ function setupCanvas() {
 
 const MIN_SPEED = 1.5;
 const MAX_SPEED = 2.5;
-
 function randomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
-
 class Blob {
   constructor(el) {
     this.el = el;
@@ -151,7 +149,6 @@ class Blob {
     this.x = this.initialX;
     this.y = this.initialY;
   }
-
   update() {
     this.x += this.vx;
     this.y += this.vy;
@@ -172,7 +169,6 @@ class Blob {
       this.vy *= -1;
     }
   }
-
   move() {
     this.el.style.transform = `translate(${this.x - this.initialX}px, ${
       this.y - this.initialY
@@ -180,7 +176,7 @@ class Blob {
   }
 }
 
-function initBlobs() {
+window.onload = function initBlobs() {
   const blobEls = document.querySelectorAll(".bouncing-blob");
   const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl));
 
@@ -191,10 +187,8 @@ function initBlobs() {
       blob.move();
     });
   }
-
   requestAnimationFrame(update);
-}
-
+};
 initBlobs();
 
 // Partie animation du carousel
