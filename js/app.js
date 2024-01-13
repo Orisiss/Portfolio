@@ -187,4 +187,5 @@ function initBlobs() {
   }
   requestAnimationFrame(update);
 };
-window.onload = initBlobs();
+
+initBlobs();
