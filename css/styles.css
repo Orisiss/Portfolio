@@ -674,6 +674,10 @@ canvas {
         backdrop-filter: blur(90px);
         -webkit-backdrop-filter: blur(90px);
     }
+
+    #back-to-top {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {

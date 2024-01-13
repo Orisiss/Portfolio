@@ -1,5 +1,3 @@
-import Swiper from "swiper";
-
 document.addEventListener("DOMContentLoaded", function () {
   let backToTopButton = document.getElementById("back-to-top");
 
@@ -176,7 +174,7 @@ class Blob {
   }
 }
 
-window.onload = function initBlobs() {
+function initBlobs() {
   const blobEls = document.querySelectorAll(".bouncing-blob");
   const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl));
 
@@ -189,21 +187,4 @@ window.onload = function initBlobs() {
   }
   requestAnimationFrame(update);
 };
-initBlobs();
-
-// Partie animation du carousel
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("project-item-visible");
-    } else {
-      entry.target.classList.remove("project-item-visible");
-    }
-  });
-});
-
-const projectItems = document.querySelectorAll(".project-item");
-projectItems.forEach((item) => {
-  observer.observe(item);
-});
+window.onload = initBlobs();
