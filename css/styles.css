@@ -638,6 +638,7 @@ canvas {
         width: 80%;
         height: auto;
         margin: 40px auto;
+        margin-right: 10px;
     }
 
     footer h2 {
