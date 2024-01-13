@@ -437,6 +437,11 @@ header {
     text-decoration: none !important;
 }
 
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .heading-experience {
     background: var(--Blue-Gradient,
             linear-gradient(180deg, #5badff 0%, #1373d1 100%));
@@ -641,6 +646,11 @@ canvas {
         margin-right: 10px;
     }
 
+    .project-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
     footer h2 {
         color: #fff;
         font-size: 24px;
@@ -674,10 +684,6 @@ canvas {
         backdrop-filter: blur(90px);
         -webkit-backdrop-filter: blur(90px);
     }
-
-    #back-to-top {
-        display: none;
-    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -697,6 +703,11 @@ canvas {
         justify-content: space-around;
         flex-wrap: wrap;
         margin: 40px 0;
+    }
+
+    .project-link {
+        text-decoration: none;
+        color: inherit;
     }
 
     footer h2 {
@@ -723,5 +734,9 @@ canvas {
     .bouncing-blobs-glass {
         backdrop-filter: blur(120px);
         -webkit-backdrop-filter: blur(120px);
+    }
+
+    #back-to-top {
+        display: none;
     }
 }
