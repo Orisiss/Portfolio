@@ -497,6 +497,10 @@ footer p {
     margin-right: 10px;
 }
 
+.email-text {
+    margin-bottom: 3px;
+}
+
 .social-links {
     display: flex;
     align-items: center;

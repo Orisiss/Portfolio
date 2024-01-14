@@ -28,6 +28,7 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
 let mouseMoved = false;
+let mouseInactiveTimer;
 
 const pointer = {
   x: 0.5 * window.innerWidth,
@@ -59,6 +60,13 @@ window.addEventListener("touchmove", (e) => {
   mouseMoved = true;
   updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
 });
+
+document.addEventListener("mousemove", function () {
+  clearTimeout(mouseInactiveTimer);
+  mouseInactiveTimer = setTimeout(function () {
+    mouseMoved = false;
+  }, 5000);
+})
 
 function updateMousePosition(eX, eY) {
   pointer.x = eX;
