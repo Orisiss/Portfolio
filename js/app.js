@@ -189,3 +189,21 @@ function initBlobs() {
 };
 
 initBlobs();
+
+// Partie scroll horizontale à la souris du carousel
+
+const carousel = document.getElementById("carousel");
+let isScrolling = false;
+
+window.addEventListener("mousemove", (e) => {
+  if (isScrolling) return;
+  isScrolling = true;
+  const carouselWidth = carousel.offsetWidth;
+  const maxScrollLeft = carousel.scrollWidth - carouselWidth;
+  const mouseX = e.clientX;
+  const scrollDistance = (mouseX / window.innerWidth) * maxScrollLeft;
+  carousel.scrollLeft = scrollDistance;
+  setTimeout(() => {
+    isScrolling = false;
+  }, 1000);
+});
