@@ -52,6 +52,18 @@ for (let i = 0; i < params.pointsNumber; i++) {
   };
 }
 
+const links = document.querySelectorAll("a");
+
+links.forEach((link) => {
+  link.addEventListener("mouseover", () => {
+    canvas.style.pointerEvents = "none";
+  });
+
+  link.addEventListener("mouseout", () => {
+    canvas.style.pointerEvents = "all";
+  });
+});
+
 window.addEventListener("mousemove", (e) => {
   mouseMoved = true;
   updateMousePosition(e.clientX, e.clientY);
@@ -66,7 +78,7 @@ document.addEventListener("mousemove", function () {
   mouseInactiveTimer = setTimeout(function () {
     mouseMoved = false;
   }, 5000);
-})
+});
 
 function updateMousePosition(eX, eY) {
   pointer.x = eX;
@@ -194,7 +206,7 @@ function initBlobs() {
     });
   }
   requestAnimationFrame(update);
-};
+}
 
 initBlobs();
 

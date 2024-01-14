@@ -499,6 +499,12 @@ footer p {
 
 .email-text {
     margin-bottom: 3px;
+    z-index: 1;
+}
+
+.email-text a {
+    color: inherit;
+    text-decoration: none;
 }
 
 .social-links {
@@ -506,6 +512,10 @@ footer p {
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+}
+
+.links {
+    z-index: 1;
 }
 
 .social-links img {
