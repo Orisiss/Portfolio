@@ -1,3 +1,11 @@
+/**
+ * Code to handle page scroll behavior and back to top button visibility.
+ * On DOM load, get reference to back to top button element.
+ * On window scroll, check scroll position and show/hide button accordingly.
+ * On button click, scroll page back to top.
+ * On window load, scroll to top.
+ * Replace browser history state to remove scroll position.
+ */
 document.addEventListener("DOMContentLoaded", function () {
   let backToTopButton = document.getElementById("back-to-top");
 
@@ -22,8 +30,13 @@ window.onload = function () {
 };
 history.replaceState({}, document.title, window.location.pathname);
 
-// Partie trainée derrière curseur
-
+/**
+ * Code to create a trailing effect from the mouse pointer.
+ * Gets canvas context, tracks mouse move and idle state.
+ * Defines pointer, parameters, trail, and event listeners.
+ * Draws quadratic bezier curve trail on canvas by tracking pointer.
+ * Updates canvas size on window resize.
+ */
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -144,8 +157,14 @@ function setupCanvas() {
   canvas.height = window.innerHeight;
 }
 
-// Partie blob en arrière-plan
-
+/**
+ * Defines constants, class, and functions to create bouncing blob elements on the page.
+ * MIN_SPEED and MAX_SPEED define the range of random velocity values.
+ * randomNumber() generates a random number within a min and max range.
+ * Blob class handles the position, velocity, and element updates for each blob.
+ * initBlobs() finds all .bouncing-blob elements, initializes Blob instances,
+ * and starts the animation update loop.
+ */
 const MIN_SPEED = 1.5;
 const MAX_SPEED = 2.5;
 function randomNumber(min, max) {
@@ -210,11 +229,13 @@ function initBlobs() {
 
 initBlobs();
 
-// Partie scroll horizontale à la souris du carousel
-
+/**
+ * Handles horizontal mouse scrolling for the carousel element.
+ * On mousemove over the carousel, calculates the scroll amount based on mouse position
+ * and carousel width. Sets a timeout to stop scrolling after 1 second.
+ */
 const carousel = document.getElementById("carousel");
 let isScrolling = false;
-
 carousel.addEventListener("mousemove", (e) => {
   if (isScrolling) return;
   isScrolling = true;
