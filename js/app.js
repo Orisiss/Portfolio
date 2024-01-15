@@ -227,3 +227,6 @@ window.addEventListener("mousemove", (e) => {
     isScrolling = false;
   }, 1000);
 });
+
+// Partie animation sur icônes d'expérience
+
