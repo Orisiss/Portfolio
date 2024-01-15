@@ -215,18 +215,15 @@ initBlobs();
 const carousel = document.getElementById("carousel");
 let isScrolling = false;
 
-window.addEventListener("mousemove", (e) => {
+carousel.addEventListener("mousemove", (e) => {
   if (isScrolling) return;
   isScrolling = true;
   const carouselWidth = carousel.offsetWidth;
   const maxScrollLeft = carousel.scrollWidth - carouselWidth;
-  const mouseX = e.clientX;
-  const scrollDistance = (mouseX / window.innerWidth) * maxScrollLeft;
+  const mouseX = e.clientX - carousel.getBoundingClientRect().left;
+  const scrollDistance = (mouseX / carouselWidth) * maxScrollLeft;
   carousel.scrollLeft = scrollDistance;
   setTimeout(() => {
     isScrolling = false;
   }, 1000);
 });
-
-// Partie animation sur icônes d'expérience
-
