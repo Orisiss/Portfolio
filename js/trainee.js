@@ -1,36 +1,4 @@
 /**
- * Code to handle page scroll behavior and back to top button visibility.
- * On DOM load, get reference to back to top button element.
- * On window scroll, check scroll position and show/hide button accordingly.
- * On button click, scroll page back to top.
- * On window load, scroll to top.
- * Replace browser history state to remove scroll position.
- */
-document.addEventListener("DOMContentLoaded", function () {
-  let backToTopButton = document.getElementById("back-to-top");
-
-  window.addEventListener("scroll", function () {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      backToTopButton.style.display = "block";
-    } else {
-      backToTopButton.style.display = "none";
-    }
-  });
-
-  backToTopButton.addEventListener("click", function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
-});
-window.onload = function () {
-  window.scrollTo(0, 0);
-};
-history.replaceState({}, document.title, window.location.pathname);
-
-/**
  * Code to create a trailing effect from the mouse pointer.
  * Gets canvas context, tracks mouse move and idle state.
  * Defines pointer, parameters, trail, and event listeners.
@@ -156,23 +124,3 @@ function setupCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
-
-/**
- * Handles horizontal mouse scrolling for the carousel element.
- * On mousemove over the carousel, calculates the scroll amount based on mouse position
- * and carousel width. Sets a timeout to stop scrolling after 1 second.
- */
-const carousel = document.getElementById("carousel");
-let isScrolling = false;
-carousel.addEventListener("mousemove", (e) => {
-  if (isScrolling) return;
-  isScrolling = true;
-  const carouselWidth = carousel.offsetWidth;
-  const maxScrollLeft = carousel.scrollWidth - carouselWidth;
-  const mouseX = e.clientX - carousel.getBoundingClientRect().left;
-  const scrollDistance = (mouseX / carouselWidth) * maxScrollLeft;
-  carousel.scrollLeft = scrollDistance;
-  setTimeout(() => {
-    isScrolling = false;
-  }, 1000);
-});
