@@ -1,4 +1,4 @@
-/* .primary-heading {
+.primary-heading {
     text-align: center;
     font-size: 35px;
 }
@@ -9,7 +9,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-} */
+}
 
 .wrapper-tools {
     width: 100%;
@@ -28,7 +28,7 @@
     z-index: 1000;
 }
 
-.card {
+.card-tools {
     width: 80px;
     border-radius: .75rem;
     background-size: cover;
@@ -42,13 +42,13 @@
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 
-.card>.row {
+.card-tools>.row {
     color: white;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.card>.row>.icon {
+.card-tools>.row>.icon {
     background: #223;
     color: white;
     border-radius: 50%;
@@ -59,7 +59,7 @@
     margin: 15px;
 }
 
-.card>.row>.description {
+.card-tools>.row>.description {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -94,18 +94,18 @@ input:checked+label .description {
     transform: translateY(0) !important;
 }
 
-.card[for="c1"] {
+.card-tools[for="t1"] {
     background-image: url('/assets/ytdler.png');
 }
 
-.card[for="c2"] {
+.card-tools[for="t2"] {
     background-image: url('/assets/NitroGenerator.png');
 }
 
-.card[for="c3"] {
+.card-tools[for="t3"] {
     background-image: url('/assets/ytdler.png');
 }
 
-.card[for="c4"] {
+.card-tools[for="t4"] {
     background-image: url('/assets/ytdler.png');
 }

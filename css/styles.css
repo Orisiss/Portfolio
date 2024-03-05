@@ -119,32 +119,8 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: -1;
 }
 
-.tools {
-    display: block;
-    justify-content: space-between;
-    overflow-x: scroll;
-    white-space: nowrap;
-}
 
-.tools-item {
-    display: inline-block;
-    width: 420px;
-    height: 330px;
-    position: relative;
-    background: #2a2a2a;
-    margin-right: 5px;
-    margin-top: 20px;
-    border-radius: 18px;
-}
-
-.tools-item img {
-    width: 100%;
-    border-radius: 18px 18px 0 0;
-}
-
-.tools-item div {
-    width: auto;
-}
 
