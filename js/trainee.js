@@ -58,7 +58,7 @@ document.addEventListener("mousemove", function () {
   clearTimeout(mouseInactiveTimer);
   mouseInactiveTimer = setTimeout(function () {
     mouseMoved = false;
-  }, 5000);
+  }, 10000);
 });
 
 function updateMousePosition(eX, eY) {
@@ -87,7 +87,7 @@ function update(t) {
     5,
     trail[0].x,
     trail[0].y,
-    20
+    20,
   );
   gradient.addColorStop(0, "white");
 

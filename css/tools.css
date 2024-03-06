@@ -4,8 +4,10 @@
 }
 
 .heading-project {
-    background: var(--Orange-Gradient,
-            linear-gradient(180deg, #ff8660 0%, #d5491d 100%));
+    background: var(
+        --Orange-Gradient,
+        linear-gradient(180deg, #ff8660 0%, #d5491d 100%)
+    );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -29,8 +31,9 @@
 }
 
 .card-tools {
+    position: relative;
     width: 80px;
-    border-radius: .75rem;
+    border-radius: 0.75rem;
     background-size: cover;
     cursor: pointer;
     overflow: hidden;
@@ -38,17 +41,17 @@
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
-    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 
-.card-tools>.row {
+.card-tools > .row {
     color: white;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.card-tools>.row>.icon {
+.card-tools > .row > .icon {
     background: #223;
     color: white;
     border-radius: 50%;
@@ -59,7 +62,7 @@
     margin: 15px;
 }
 
-.card-tools>.row>.description {
+.card-tools > .row > .description {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -68,8 +71,12 @@
     width: 520px;
     opacity: 0;
     transform: translateY(30px);
-    transition-delay: .3s;
-    transition: all .3s ease;
+    transition-delay: 0.3s;
+    transition: all 0.3s ease;
+}
+
+.card-tools .icon {
+    display: block;
 }
 
 .description p {
@@ -85,27 +92,40 @@ input {
     display: none;
 }
 
-input:checked+label {
+.icon {
+    z-index: 1;
+}
+
+input:checked + label {
     width: 600px;
 }
 
-input:checked+label .description {
+input:checked + label .description {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
-.card-tools[for="t1"] {
-    background-image: url('/assets/ytdler.png');
+input:checked + label video {
+    display: block;
+}
+
+.card-tools[for="t1"] video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-tools[for="t2"] {
-    background-image: url('/assets/NitroGenerator.png');
+    background-image: url("/assets/NitroGenerator.png");
 }
 
 .card-tools[for="t3"] {
-    background-image: url('/assets/ytdler.png');
+    background-image: url("/assets/ytdler.png");
 }
 
 .card-tools[for="t4"] {
-    background-image: url('/assets/ytdler.png');
+    background-image: url("/assets/ytdler.png");
 }
