@@ -118,12 +118,22 @@ input:checked + label video {
     object-fit: cover;
 }
 
-.card-tools[for="t2"] {
-    background-image: url("/assets/NitroGenerator.png");
+.card-tools[for="t2"] video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.card-tools[for="t3"] {
-    background-image: url("/assets/ytdler.png");
+.card-tools[for="t3"] video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-tools[for="t4"] {
