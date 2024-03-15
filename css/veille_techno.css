@@ -45,6 +45,11 @@
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 }
 
+.card-veille:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
 .card-veille > .row {
     color: white;
     display: flex;
