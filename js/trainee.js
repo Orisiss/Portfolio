@@ -58,7 +58,7 @@ document.addEventListener("mousemove", function () {
   clearTimeout(mouseInactiveTimer);
   mouseInactiveTimer = setTimeout(function () {
     mouseMoved = false;
-  }, 10000);
+  }, 20000);
 });
 
 function updateMousePosition(eX, eY) {
