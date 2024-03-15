@@ -2,5 +2,6 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.33",
     "animate.css": "^4.1.1"
+    ////// test
   }
 }
