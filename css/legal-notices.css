@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.heading-legal-notices {
+    background: var(
+            --Orange-Gradient,
+            linear-gradient(180deg, #ff8660 0%, #d5491d 100%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.primary-heading {
+    text-align: center;
+    font-size: 35px;
+    margin-top: 50px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
+    background-size: cover;
+    color: #c5c5c5;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.container {
+    width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.text-section {
+    width: 652px;
+    margin: 30px auto;
+}
+
+.email-text {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+    margin-bottom: 4px;
+    z-index: 1;
+}
+
+.email-text a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.email-text a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.email-text a:hover {
+    color: #3498db;
+}
