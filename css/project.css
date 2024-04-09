@@ -107,15 +107,15 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-    background-image: url("/assets/ytdler.png");
+    background-image: url("/assets/yt-dler.png");
 }
 
 .card[for="c2"] {
-    background-image: url("/assets/NitroGenerator.png");
+    background-image: url("/assets/nitro.png");
 }
 
 .card[for="c3"] {
-    background-image: url("/assets/ytdler.png");
+    background-image: url("/assets/note_manager.png");
 }
 
 .card[for="c4"] {
